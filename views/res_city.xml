@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="res_partner_city_form_view">
+            <field name="name">res.city.form</field>
+            <field name="model">res.city</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Cities">
+                    <group col="1">
+                        <field name="name" select="1" required="True"/>
+                        <field name="airport_code"/>
+                        <field name="zip_code"/>
+                        <field name="state_id" required="True"/>
+                        <field name="country_id_name" readonly="True"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="res_partner_city_tree_view">
+            <field name="name">res.city.tree</field>
+            <field name="model">res.city</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Cities">
+                    <field name="name"/>
+                    <field name="airport_code"/>
+                    <field name="state_id"/>
+                    <field name="country_id_name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_res_city_tree_view">
+            <field name="name">Cities list</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.city</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</openerp>
